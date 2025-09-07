@@ -3,7 +3,7 @@ import Main from "./components/Main/Main";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-  const [blur, setBlur] = useState(true); // ✅ solo en memoria
+  const [blur, setBlur] = useState(true);
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("darkMode");
     return saved !== null ? saved === "true" : true;
@@ -43,12 +43,9 @@ function App() {
   const toggleTheme = () => setDarkMode((prev) => !prev);
   const toggleBlur = () => setBlur((prev) => !prev);
 
-  console.log(darkMode);
-
-
   return (
     <>
-      <Navbar toggleBlur={toggleBlur} clearData={clearData} toggleTheme={toggleTheme} />
+      <Navbar toggleBlur={toggleBlur} clearData={clearData} toggleTheme={toggleTheme} darkMode={darkMode} />
       <Main data={data} setData={setData} blur={blur} />
     </>
   );

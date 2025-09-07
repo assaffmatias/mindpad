@@ -43,7 +43,6 @@ const Main = ({ data, setData, blur }) => {
 
     useEffect(() => {
         const saved = localStorage.getItem("myData");
-        console.log(saved);
 
         if (saved) {
             setData(JSON.parse(saved));
