@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 30px;
+    padding-right: 20px;
     position: relative;
 }
 
@@ -52,6 +53,7 @@
     transform: scale(.9);
     min-width: 160px;
     box-shadow: var(--shadow-small);
+    z-index: 100;
 }
 
 .modal_visible {
