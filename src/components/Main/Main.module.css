@@ -1,0 +1,205 @@
+.main {
+    max-width: 960px;
+    margin: 50px auto;
+    padding: 0 15px;
+    /* padding: 100px 32px; */
+    box-sizing: border-box;
+}
+
+.title {
+    margin: 0;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.input_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    transition: .3s;
+    border-radius: 8px;
+}
+
+.input_container:hover {
+    background-color: var(--gray2);
+}
+
+.input {
+    font-family: var(--font-family);
+    width: 100%;
+    background: transparent;
+    border: transparent;
+    color: var(--fg);
+    font-size: 16px;
+    resize: none;
+    padding: 0;
+    position: relative;
+    line-height: 24px;
+    /* margin-top: 24px; */
+    border-radius: 4px;
+    outline: none;
+    overflow-y: hidden;
+}
+
+.mic {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 16px;
+    position: relative;
+}
+
+.mic[data-listening=true]:after {
+    -webkit-animation-name: listening;
+    animation-name: listening;
+}
+
+.mic:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.mic_svg {
+    width: 20px;
+    height: 20px;
+    color: var(--gray6);
+}
+
+.hr {
+    width: calc(100% - 30px);
+    height: 1px;
+    background: var(--gray2);
+    border: 0;
+    margin: 0 auto;
+    margin-top: 5px;
+    position: relative;
+}
+
+.hr::after {
+    --loader-color: var(--gray4);
+    content: "";
+    width: 50%;
+    height: 1px;
+    position: absolute;
+    background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, var(--loader-color)), to(transparent));
+    background: -webkit-linear-gradient(left, transparent 0, var(--loader-color) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0, var(--loader-color) 50%, transparent 100%);
+    top: 0;
+    opacity: 0;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.hr[data-listening=true]:after {
+    -webkit-animation-name: divider;
+    animation-name: divider;
+}
+
+.data_container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.data_content {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    transition: .3s;
+    border-radius: 8px;
+}
+
+.data_content:hover {
+    background-color: var(--gray2);
+}
+
+.data_content:hover .data_text {
+    transition: 0.1s ease;
+    filter: none;
+    opacity: 1;
+}
+
+.data_text {
+    margin: 0;
+    transition: 0.5s ease;
+    word-wrap: break-word;
+    color: var(--fg);
+    filter: none;
+    opacity: 1;
+    /* rompe palabras largas */
+    overflow-wrap: break-word;
+    /* soporte más moderno */
+    white-space: normal;
+}
+
+.data_text_blur {
+    filter: blur(4px);
+    opacity: .4;
+    transition: 1s;
+}
+
+@keyframes listening {
+    0% {
+        background: var(--gray3);
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    70% {
+        background: rgba(255, 91, 91, 0);
+        -webkit-transform: scale(2);
+        transform: scale(2);
+    }
+
+    100% {
+        background: rgba(255, 91, 91, 0);
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+}
+
+@keyframes divider {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    50% {
+        opacity: 1;
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        margin: 30px auto;
+    }
+}

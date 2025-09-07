@@ -1,0 +1,101 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    position: relative;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+}
+
+.menu_button {
+    background-color: transparent;
+    border: none;
+    color: var(--fg);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: .3s;
+    width: 40px;
+    height: 40px;
+}
+
+.menu_button_selected {
+    background-color: var(--gray2);
+}
+
+.menu_button:hover {
+    background-color: var(--gray2);
+}
+
+.menu_svg {
+    width: 24px;
+    height: 24px;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    position: absolute;
+    top: 90px;
+    border-radius: 5px;
+    right: 30px;
+    padding: 5px;
+    background-color: var(--menu-bg);
+    opacity: 0;
+    transition: .1s;
+    pointer-events: none;
+    transform: scale(.9);
+    min-width: 160px;
+    box-shadow: var(--shadow-small);
+}
+
+.modal_visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.modal_button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: transparent;
+    border: none;
+    color: var(--gray6);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+    transition: .3s;
+}
+
+.modal_button:hover {
+    background-color: var(--gray1);
+}
+
+.modal_button:hover .key_indicator {
+    background-color: var(--gray2);
+}
+
+.key_indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background-color: var(--gray1);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.span_text {
+    margin: 0;
+}
