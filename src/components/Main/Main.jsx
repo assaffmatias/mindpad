@@ -81,7 +81,7 @@ const Main = ({ data, setData, blur }) => {
             };
 
             setData((prev) => {
-                const updated = [newItem, ...prev];
+                const updated = [...prev, newItem];
                 localStorage.setItem("myData", JSON.stringify(updated));
                 return updated;
             });

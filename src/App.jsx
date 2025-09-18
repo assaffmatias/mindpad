@@ -3,7 +3,7 @@ import Main from "./components/Main/Main";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-  const [blur, setBlur] = useState(true);
+  const [blur, setBlur] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("darkMode");
     return saved !== null ? saved === "true" : true;
