@@ -122,10 +122,14 @@
 
 .data_content {
     display: flex;
+    position: relative;
+    /* align-items: center; */
     flex-direction: column;
     padding: 10px;
     transition: .3s;
     border-radius: 8px;
+    overflow: hidden;
+    padding-right: 40px;
 }
 
 .data_content:hover {
@@ -136,6 +140,20 @@
     transition: 0.1s ease;
     filter: none;
     opacity: 1;
+}
+
+.data_content:hover .svg {
+    opacity: 1;
+}
+
+.svg {
+    position: absolute;
+    right: 10px;
+    transition: .5s opacity;
+    cursor: pointer;
+    opacity: 0;
+    /* fill: var(--fg); */
+    color: var(--gray7);
 }
 
 .data_text {
