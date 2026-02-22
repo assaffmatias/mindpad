@@ -22,7 +22,11 @@
 }
 
 .input_container:hover {
-    background-color: var(--gray2);
+    background-color: var(--highlight);
+}
+
+.input_transcript {
+    background-color: var(--highlight);
 }
 
 .input {
@@ -36,7 +40,6 @@
     padding: 0;
     position: relative;
     line-height: 24px;
-    /* margin-top: 24px; */
     border-radius: 4px;
     outline: none;
     overflow-y: hidden;
@@ -123,7 +126,6 @@
 .data_content {
     display: flex;
     position: relative;
-    /* align-items: center; */
     flex-direction: column;
     padding: 10px;
     transition: .3s;
@@ -133,7 +135,7 @@
 }
 
 .data_content:hover {
-    background-color: var(--gray2);
+    background-color: var(--highlight);
 }
 
 .data_content:hover .data_text {
@@ -142,17 +144,19 @@
     opacity: 1;
 }
 
-.data_content:hover .svg {
+.data_content:hover .trash_svg {
     opacity: 1;
 }
 
-.svg {
+.trash_svg {
     position: absolute;
     right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
     transition: .5s opacity;
     cursor: pointer;
     opacity: 0;
-    /* fill: var(--fg); */
     color: var(--gray7);
 }
 
